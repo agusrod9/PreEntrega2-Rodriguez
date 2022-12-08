@@ -1,0 +1,408 @@
+body{
+    background-color: rgb(180, 180, 180);
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 70px 80px 2fr 90px;
+    grid-template-areas: 
+        "encabezado encabezado encabezado encabezado"
+        "navegacion navegacion navegacion navegacion"
+        "principal principal principal principal"
+        "pie pie pie pie"
+    ;
+    max-width: 70%;
+    margin: auto;
+    background-color: rgb(180, 180, 180);
+}
+
+/*TABLET*/
+@media(max-width: 1024px){
+    .contenedor{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 70px 80px 2fr 90px;
+        grid-template-areas: 
+        "encabezado encabezado"
+        "navegacion navegacion"
+        "principal principal"
+        "pie pie"
+        ;
+    }
+
+    header{
+        grid-area: encabezado;
+        background-color: rgb(220, 180, 180);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    nav{
+        grid-area: navegacion;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    
+    ul{
+        width: 100%;
+        
+        text-align: center;
+        display: block;
+        background-image: linear-gradient(#494949, #9d9d9d);
+        justify-content:space-evenly;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        align-items: center;
+    }
+    
+    li{
+        display: inline-block;
+        padding: 16px;
+        
+    }
+}
+/*CELULAR*/
+@media(max-width: 767px){
+    .contenedor{
+        max-width: 95%;
+        grid-template-columns: 100%;
+        grid-template-rows: 70px 80px 2fr 90px;
+        grid-template-areas: 
+        "encabezado"
+        "navegacion"
+        "principal"
+        "pie"
+        ;
+    }
+
+    header{
+        grid-area: encabezado;
+        background-color: rgb(180, 180, 180);
+        display: flex;
+        align-items: center;
+    }
+
+    .redesSociales{
+        margin-left: auto;
+        max-width: 48%;
+    }
+    
+    .redesSociales img{
+        width: 100%;
+        max-height: auto;
+        transition: all 0.3s;
+    }
+    
+    .redesSociales img:hover{
+        
+        transform: rotate(360deg) scale(1.2);
+    }    
+    .imgEmpresa{
+        margin-left: 5px;
+        max-width: 48%;
+    }
+    
+    .imgEmpresa img{
+        width: 100%;
+        max-height: auto;
+        transition: all 0.3s;
+    }
+    
+    .imgEmpresa img:hover{
+        transform: scale(.9)
+    }
+
+    nav{
+        grid-area: navegacion;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    
+    ul{
+        width: 100%;
+        text-align: center;
+        display: block;
+        background-image: linear-gradient(#494949, #9d9d9d);
+        justify-content:space-evenly;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        align-items: center;
+    }
+    
+    li{
+        display: inline-block;
+        padding: 16px;
+        
+    }
+}
+
+/*---------------------------------------HEADER--------------------------------------*/
+header{
+    grid-area: encabezado;
+    background-color: rgb(180, 180, 180);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.redesSociales{
+    margin-left: auto;
+}
+
+.redesSociales img{
+    max-width: 50px;
+    max-height: auto;
+    transition: all 0.3s;
+}
+
+.redesSociales img:hover{
+    
+    transform: rotate(360deg) scale(1.2);
+}    
+.imgEmpresa{
+    margin-left: 5px;
+}
+
+.imgEmpresa img{
+    max-width: 300px;
+    max-height: auto;
+    transition: all 0.3s;
+}
+
+.imgEmpresa img:hover{
+    transform: scale(.9)
+}
+
+
+/*---------------------------------------NAV--------------------------------------*/
+
+
+nav{
+    grid-area: navegacion;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+ul{
+    width: 100%;
+    
+    text-align: center;
+    display: block;
+    background-image: linear-gradient(#494949, #9d9d9d);
+    justify-content:space-evenly;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+}
+
+li{
+    display: inline-block;
+    padding: 16px;
+    
+}
+
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: tansform, .5s;
+}
+
+nav ul li:hover {
+    background-color: rgb(60, 60, 60);
+    cursor: pointer;
+    transform: scale(1.2);
+    
+}
+
+
+
+/*---------------------------------------MAIN--------------------------------------*/
+
+
+main{
+    overflow: hidden;
+    grid-area: principal;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 
+        "MainFormulario MainFormulario MainMapa MainMapa"
+        "MainDatos MainDatos MainMapa MainMapa"
+    ;
+    gap: 0.5em;
+}
+
+.formContacto{
+    grid-area: MainFormulario;
+    background-color: rgb(150, 150, 150);
+    overflow: hidden;
+    
+}
+
+.nuestrosDatos{
+    display: flex;
+    flex-direction: column;
+    grid-area: MainDatos;
+    background-color: rgb(150, 150, 150);
+    overflow: hidden;
+}
+
+.mapaContacto{
+    grid-area: MainMapa;
+    background-color: rgb(150, 150, 150);
+    overflow: hidden;
+}
+
+.mapaContacto h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-bottom: 0 ;
+}
+
+.mapaContacto h2{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 18px;  
+}
+
+.mapaContacto p{
+    text-align: center;
+}
+
+.nuestrosDatos h1{
+    margin-top: auto;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.nuestrosDatos #tx1{
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.nuestrosDatos #tx2{
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.formContacto h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.formContacto label{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.formContacto p{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+.txtNombre{
+    width: 300px;
+}
+
+.txtMail{
+    width: 300px;
+}
+
+.txtCelular{
+    width: 300px;
+}
+
+.txtAreaMensaje{
+    width: 300px;
+    height: 90px;
+}
+
+.btnEnviar{
+    padding: 0;
+    margin-top: 2px;
+    margin-left: auto;
+}
+
+.mainContent{
+   
+    margin: 0;
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    overflow: hidden;
+    
+}
+
+.mainContentIndex{
+    margin: 0;
+    display: grid;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    overflow: hidden;
+    background-image: url(../img/back5.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+
+.mainContentIndex h1{
+    text-align: center;    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainContentIndex p{
+    text-align: left;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.underConstruction{
+    margin: 0;
+    padding: 0;
+    width: 100%;   
+}
+
+/*---------------------------------------FOOTER--------------------------------------*/
+
+footer{
+    margin-top: 1em;
+    background-image: linear-gradient(#9d9d9d,#494949);
+    grid-area: pie;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+footer p{
+    padding-right: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: whitesmoke;
+}
